@@ -1,5 +1,4 @@
-﻿
-using NaiveBayesExample;
+﻿using NaiveBayesExample;
 
 List<List<string>> trainingDataset = new List<List<string>>() {
     new List<string> { "genç", "düşük", "en riskli", "Onaylanmaz" },

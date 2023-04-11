@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NaiveBayesExample {
+﻿namespace NaiveBayesExample {
     public class NaiveBayes {
         private static readonly List<string> AGE_VALUES = new List<string> { "genç", "orta", "yaşlı" };
         private static readonly List<string> INCOME_VALUES = new List<string> { "düşük", "orta", "yüksek" };
