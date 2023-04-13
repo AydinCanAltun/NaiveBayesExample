@@ -4,98 +4,110 @@ Simple implementation of Naive Bayes on C#.
 == Bayes Therom
 Bayes Therom is an extension of Conditional Propability. Conditional Propability helps us to determine the propability of A when given B, denoted by P(A|B).
 
-image::https://cdn1.byjus.com/wp-content/uploads/2020/10/Bayes-Theorem.png[]
+image::https://cdn1.byjus.com/wp-content/uploads/2020/10/Bayes-Theorem.png[title="Bayes Formula", link="https://byjus.com/maths/bayes-theorem/"]
 
 == How This Code Works
-In our example, we will determine a bank customer can take loan based on his/her age, income and credit score.
+In our example, we will determine a bank customer can take loan based on customer's age, income and credit score.
 
-Possible values for age are young, middle age, old.
+Possible values for age are *young*, *middle age*, *old*.
 
-Possible values for income are low, middle, high.
+Possible values for income are *low*, *middle*, *high*.
 
-Possible values for credit score are very risky, medium risk, low risk, good, very good.
+Possible values for credit score are *very risky*, *medium risk*, *low risk*, *good*, *very good*.
 
-Outcome values are Approvable, Not Approved
+Outcome values are [green]#*Approvable*#, [red]#*Not Approved*#
 
 === Training Process
-
+In the training process first we calculate the posibilities of outcomes and then create posibility tables for age, income and credit score.
 
 ==== Training Data Set
 [colls="1, 1, 1, 1"]
 |===
-|Age |Income | Credit Score | Result
+|Age |Income | Credit Score | Outcomes
 
 |young
 |low
 |low
-|Not Approved
+|[red]#Not Approved#
 
 |young
 |low
 |good
-|Noot Approved
+|[red]#Not Approved#
 
 |young
 |middle
 |middle risk
-|Not Approved
+|[red]#Not Approved#
 
 |young
 |high
 |very good
-|Not Approved
+|[red]#Not Approved#
 
 |young
 |high
 |good
-|Approvable
+|[green]#Approvable#
 
 |young
 |high
 |low risk
-|Approvable
+|[green]#Approvable#
 
 |middle age
 |low
 |medium risk
-|Not approved
+|[red]#Not Approved#
 
 |middle age
 |low
 |good
-|Approvable
+|[green]#Approvable#
 
 |middle age
 |midde
 |medium risk
-|Approvable
+|[green]#Approvable#
 
 |middle age
 |middle
 |very good
-|Approvable
+|[green]#Approvable#
 
 |middle age
 |high
 |good
-|Not approved
+|[red]#Not Approved#
 
 |old
 |low
 |very good
-|Approvable
+|[green]#Approvable#
 
 |old
 |middle
 |low risk
-|Approvable
+|[green]#Approvable#
 
 |old
 |high
 |very good
-|Approvable
+|[green]#Approvable#
 
 |===
 
+There are 14 different scenario in our dataset so posibilities of outcomes looks like this,
+
+[colls="1,1"]
+|===
+|Outcome |P(Outcome)
+
+|Approvable
+|0,5714285714285714
+
+|Not approved
+|0,4285714285714286
+|===
 
 
