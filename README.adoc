@@ -4,7 +4,98 @@ Simple implementation of Naive Bayes on C#.
 == Bayes Therom
 Bayes Therom is an extension of Conditional Propability. Conditional Propability helps us to determine the propability of A when given B, denoted by P(A|B).
 
-[asciimath]
-++++
-P(A|B) = frac{P(B|A) * P(A)}{P(B)}
-++++
+image::https://cdn1.byjus.com/wp-content/uploads/2020/10/Bayes-Theorem.png[]
+
+== How This Code Works
+In our example, we will determine a bank customer can take loan based on his/her age, income and credit score.
+
+Possible values for age are young, middle age, old.
+
+Possible values for income are low, middle, high.
+
+Possible values for credit score are very risky, medium risk, low risk, good, very good.
+
+Outcome values are Approvable, Not Approved
+
+=== Training Process
+
+
+==== Training Data Set
+[colls="1, 1, 1, 1"]
+|===
+|Age |Income | Credit Score | Result
+
+|young
+|low
+|low
+|Not Approved
+
+|young
+|low
+|good
+|Noot Approved
+
+|young
+|middle
+|middle risk
+|Not Approved
+
+|young
+|high
+|very good
+|Not Approved
+
+|young
+|high
+|good
+|Approvable
+
+|young
+|high
+|low risk
+|Approvable
+
+|middle age
+|low
+|medium risk
+|Not approved
+
+|middle age
+|low
+|good
+|Approvable
+
+|middle age
+|midde
+|medium risk
+|Approvable
+
+|middle age
+|middle
+|very good
+|Approvable
+
+|middle age
+|high
+|good
+|Not approved
+
+|old
+|low
+|very good
+|Approvable
+
+|old
+|middle
+|low risk
+|Approvable
+
+|old
+|high
+|very good
+|Approvable
+
+|===
+
+
+
