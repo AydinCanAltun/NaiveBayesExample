@@ -1,0 +1,10 @@
+= Naive Bayes Example
+Simple implementation of Naive Bayes on C#.
+
+== Bayes Therom
+Bayes Therom is an extension of Conditional Propability. Conditional Propability helps us to determine the propability of A when given B, denoted by P(A|B).
+
+[asciimath]
+++++
+P(A|B) = frac{P(B|A) * P(A)}{P(B)}
+++++
