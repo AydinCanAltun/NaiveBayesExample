@@ -6,7 +6,7 @@ Bayes Therom is an extension of Conditional Propability. Conditional Propability
 
 image::https://cdn1.byjus.com/wp-content/uploads/2020/10/Bayes-Theorem.png[title="Bayes Formula", link="https://byjus.com/maths/bayes-theorem/"]
 
-== How This Code Works
+== How Naive Bayes Works In Our Example
 In our example, we will determine a bank customer can take loan based on customer's age, income and credit score.
 
 Possible values for age are *young*, *middle age*, *old*.
@@ -27,7 +27,7 @@ In the training process first we calculate the posibilities of outcomes and then
 
 |young
 |low
-|low
+|very risky
 |[red]#Not Approved#
 
 |young
@@ -37,7 +37,7 @@ In the training process first we calculate the posibilities of outcomes and then
 
 |young
 |middle
-|middle risk
+|medium risk
 |[red]#Not Approved#
 
 |young
@@ -99,15 +99,106 @@ In the training process first we calculate the posibilities of outcomes and then
 
 There are 14 different scenario in our dataset so posibilities of outcomes looks like this,
 
-[colls="1,1"]
+[colls="1,1,1"]
 |===
-|Outcome |P(Outcome)
+|Outcome |Count |P(Outcome)
 
 |Approvable
-|0,5714285714285714
+|8
+|0.5714285714285714
 
 |Not approved
-|0,4285714285714286
+|6
+|0.4285714285714286
 |===
 
+===== Creating Propability Tables
+In order to create propability tables, we need to calculate probability of a possible value occur in an outcome for every possible value one by one.
+
+Basicly for creating a probability table for Age we need to calculate P(Approvable|young), P(Approvabke|middle age), P(Approvable|old), P(Not approved|young), P(Not approved|middle age) and P(Not approved|old).
+
+
+Probability Table For Age
+[colls="1,1,1,1"]
+|===
+|Outcome |P(outcome\|young)| P(outcome\|middle age)| P(outcome\|old)
+
+|Approvable
+|0.25
+|0.375
+|0.375
+
+|Not approved
+|0,6666666666666667
+|0.3333333333333333
+|0
+
+|===
+
+Probability Table For Income
+[colls="1,1,1,1"]
+|===
+|Outcome |P(outcome\|low) |P(outcome\|middle) |P(outcome\|high)
+
+|Approvable
+|0.25
+|0.375
+|0.375
+
+|Not approved
+|0.5
+|0.1666666666666667
+|0,3333333333333333
+
+|===
+
+Probability Table For Credit Score
+[colls="1,1,1,1,1,1"]
+|===
+|Outcome |P(outcome\|very risk) |P(outcome\|medium risk) |P(outcome\|low risk) |P(outcome\|good) |P(outcome\|very good)
+
+|Approved
+|0
+|0.125
+|0.25
+|0.25
+|0.375
+
+|Not approved
+|0.1666666666666667
+|0.3333333333333333
+|0
+|0.3333333333333333
+|0.1666666666666667
+
+|===
+
+
+=== Prediction Process
+In starting of the prediction process, first we need to take age, income and credit score values as input. Then we need to calculate probability of outcome happens when input Age, Income and Credit Score happens for every outcome and most probabible value is our prediction.
+
+For Example lets say given Inputs down below
+Age: young,
+Income: High,
+Credit Score: very good
+
+[colls="1,1,1,1,1,1"]
+|===
+|Outcome |P(Outcome) |P(Outcome\|young) |P(outcome\|High) |P(Outcome\|very good) | P(Outcome\|yound high very good)
+
+|Approved
+|1
+|1
+|1
+|1
+|1
+
+|Not Approved
+|1
+|1
+|1
+|1
+|1
+
+|===
 
