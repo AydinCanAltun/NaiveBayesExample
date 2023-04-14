@@ -1,28 +1,28 @@
 ﻿using NaiveBayesExample;
 
 List<List<string>> trainingDataset = new List<List<string>>() {
-    new List<string> { "genç", "düşük", "en riskli", "Onaylanmaz" },
-    new List<string> { "genç", "düşük", "iyi", "Onaylanmaz" },
-    new List<string> { "genç", "orta", "orta riskli", "Onaylanmaz" },
-    new List<string> { "genç", "yüksek", "çok iyi", "Onaylanmaz" },
-    new List<string> { "genç", "yüksek", "iyi", "Onaylanabilir" },
-    new List<string> { "genç", "yüksek", "az riskli", "Onaylanabilir"},
-    new List<string> { "orta", "düşük", "orta riskli", "Onaylanmaz" },
-    new List<string> { "orta", "düşük", "iyi", "Onaylanabilir" },
-    new List<string> { "orta", "orta", "orta riskli", "Onaylanabilir" },
-    new List<string> { "orta", "orta", "çok iyi", "Onaylanabilir" },
-    new List<string> { "orta", "yüksek", "iyi", "Onaylanmaz" },
-    new List<string> { "yaşlı", "düşük", "çok iyi", "Onaylanabilir" },
-    new List<string> { "yaşlı", "orta", "az riskli", "Onaylanabilir" },
-    new List<string> { "yaşlı", "yüksek", "çok iyi", "Onaylanabilir" }
+    new List<string> { "young", "low", "very risky", "Not approved" },
+    new List<string> { "young", "low", "good", "Not approved" },
+    new List<string> { "young", "middle", "medium risk", "Not approved" },
+    new List<string> { "young", "high", "very good", "Not approved" },
+    new List<string> { "young", "high", "good", "Approvable" },
+    new List<string> { "young", "high", "low risk", "Approvable"},
+    new List<string> { "middle age", "low", "medium risk", "Not approved" },
+    new List<string> { "middle age", "low", "good", "Approvable" },
+    new List<string> { "middle age", "middle", "medium risk", "Approvable" },
+    new List<string> { "middle age", "middle", "very good", "Approvable" },
+    new List<string> { "middle age", "high", "good", "Not approved" },
+    new List<string> { "old", "low", "very good", "Approvable" },
+    new List<string> { "old", "middle", "low risk", "Approvable" },
+    new List<string> { "old", "high", "very good", "Approvable" }
 };
 
 NaiveBayes bayes = new NaiveBayes();
-bayes.Learn(trainingDataset);
-string age = "genç";
-string income = "düşük";
-string creditScore = "çok iyi";
-string result = bayes.Guess(age, income, creditScore);
+bayes.Train(trainingDataset);
+string age = "young";
+string income = "high";
+string creditScore = "very good";
+string result = bayes.Predict(age, income, creditScore);
 
 Console.WriteLine(string.Format("Yaş: {0}, Gelir Düzeyi: {1}, Kredi Skoru: {2} değerlerine göre kredi onaylanır mı ? {3}", age, income, creditScore, result));
 Console.ReadKey();

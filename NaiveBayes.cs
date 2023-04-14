@@ -1,8 +1,8 @@
 ﻿namespace NaiveBayesExample {
     public class NaiveBayes {
-        private static readonly List<string> AGE_VALUES = new List<string> { "genç", "orta", "yaşlı" };
-        private static readonly List<string> INCOME_VALUES = new List<string> { "düşük", "orta", "yüksek" };
-        private static readonly List<string> CREDIT_SCORE_VALUES = new List<string> { "en riskli", "orta riskli", "az riskli", "iyi", "çok iyi" };
+        private static readonly List<string> AGE_VALUES = new List<string> { "young", "middle age", "old" };
+        private static readonly List<string> INCOME_VALUES = new List<string> { "low", "middle", "high" };
+        private static readonly List<string> CREDIT_SCORE_VALUES = new List<string> { "very risky", "medium risk", "low risk", "good", "very good" };
 
         private Dictionary<string, Dictionary<string, double>> agePosibilities = new Dictionary<string, Dictionary<string, double>>();
         private Dictionary<string, Dictionary<string, double>> incomePosibitilies = new Dictionary<string, Dictionary<string, double>>();
@@ -12,7 +12,7 @@
 
         private Dictionary<string, double> outcomePosibilities = new Dictionary<string, double>();
 
-        public void Learn(List<List<string>> trainingData) {
+        public void Train(List<List<string>> trainingData) {
             int totalTrainingDataLength = trainingData.Count;
 
             for (int i = 0; i < totalTrainingDataLength; i++) {
@@ -34,7 +34,7 @@
             creditScorePosibilities = CreatePosibilityTable(trainingData, 2, CREDIT_SCORE_VALUES);
         }
 
-        public string Guess(string age, string income, string creditScore) {
+        public string Predict(string age, string income, string creditScore) {
             Dictionary<string, double> caseOutcomePosibilities = new Dictionary<string, double>();
             foreach (string outcome in outcomePosibilities.Keys) {
                 double outcomePosibility = outcomePosibilities[outcome];
@@ -42,10 +42,10 @@
                 double agePosibility = agePosibilities[outcome][age];
                 outcomePosibility *= agePosibility;
 
-                double incomePosibility = incomePosibitilies[outcome][income];
+                double incomePosibility = incomePosibitilies[outcome][income]; // 0.70
                 outcomePosibility *= incomePosibility;
 
-                double creditRiskScorePosibility = creditScorePosibilities[outcome][creditScore];
+                double creditRiskScorePosibility = creditScorePosibilities[outcome][creditScore]; // 0.90
                 outcomePosibility *= creditRiskScorePosibility;
 
                 caseOutcomePosibilities[outcome] = outcomePosibility;
@@ -84,6 +84,5 @@
 
             return posibilityTable;
         }
-
     }
 }

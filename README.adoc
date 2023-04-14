@@ -175,7 +175,9 @@ Probability Table For Credit Score
 
 
 === Prediction Process
-In starting of the prediction process, first we need to take age, income and credit score values as input. Then we need to calculate probability of outcome happens when input Age, Income and Credit Score happens for every outcome and most probabible value is our prediction.
+In starting of the prediction process, first we need to take age, income and credit score values as input. Then we need to calculate probability of outcome happens when input Age, Income and Credit Score happens for every outcome and most probabible outcome is our prediction.
+
+image::img/Prediction.png[title="Bayes Formula"]
 
 For Example lets say given Inputs down below
 Age: young,
@@ -186,19 +188,19 @@ Credit Score: very good
 |===
 |Outcome |P(Outcome) |P(Outcome\|young) |P(outcome\|High) |P(Outcome\|very good) | P(Outcome\|yound high very good)
 
-|Approved
-|1
-|1
-|1
-|1
-|1
+|Approvable
+|0.5714285714285714
+|0.25
+|0.375
+|0.375
+|0.5586206896551723
 
 |Not Approved
-|1
-|1
-|1
-|1
-|1
+|0.4285714285714286
+|0,6666666666666667
+|0.3333333333333333
+|0.1666666666666667
+|0.4413793103448277
 
 |===
 
