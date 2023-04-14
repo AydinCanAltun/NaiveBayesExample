@@ -18,7 +18,7 @@ Possible values for credit score are *very risky*, *medium risk*, *low risk*, *g
 Outcome values are [green]#*Approvable*#, [red]#*Not Approved*#
 
 === Training Process
-In the training process first we calculate the posibilities of outcomes and then create posibility tables for age, income and credit score.
+In the training process first we calculate the possibilities of outcomes and then create possibility tables for age, income and credit score.
 
 ==== Training Data Set
 [colls="1, 1, 1, 1"]
@@ -97,7 +97,7 @@ In the training process first we calculate the posibilities of outcomes and then
 
 |===
 
-There are 14 different scenario in our dataset so posibilities of outcomes looks like this,
+There are 14 different scenario in our dataset so possibilities of outcomes looks like this,
 
 [colls="1,1,1"]
 |===
