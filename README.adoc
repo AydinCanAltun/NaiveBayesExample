@@ -189,7 +189,7 @@ Credit Score: very good
 
 [colls="1,1,1,1,1,1"]
 |===
-|Outcome |P(Outcome) |P(Outcome\|young) |P(outcome\|High) |P(Outcome\|very good) | P(Outcome\|yound high very good)
+|Outcome |P(Outcome) |P(Outcome\|young) |P(outcome\|High) |P(Outcome\|very good) | P(Outcome\|young high very good)
 
 |Approvable
 |0.5714285714285714
