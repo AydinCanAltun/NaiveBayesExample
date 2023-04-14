@@ -180,8 +180,11 @@ In starting of the prediction process, first we need to take age, income and cre
 image::img/Prediction.png[title="Bayes Formula"]
 
 For Example lets say given Inputs down below
+
 Age: young,
+
 Income: High,
+
 Credit Score: very good
 
 [colls="1,1,1,1,1,1"]
