@@ -207,3 +207,4 @@ Credit Score: very good
 
 |===
 
+As we can see the most probable outcome is Approvable, so our result will be Approvable
